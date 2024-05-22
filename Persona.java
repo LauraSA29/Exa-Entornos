@@ -40,6 +40,11 @@ class Persona {
 
 
     //sets
+    /**
+     * Para comprobar que el dni es válido
+     * @param dni
+     * @return un false si el dni no es valido y un true si es verdadero
+     */
     public boolean setDni(String dni) {
         if (dni.matches("\\d{8}")) {
             this.dni = dni;
@@ -50,7 +55,11 @@ class Persona {
         }
     }
 
-
+    /**
+     * Ver si el correo es válido 
+     * @param correo
+     * @return un false si el correo no es valido y un true si es verdadero
+     */
     public boolean setCorreo(String correo) {
         String regex = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
         Pattern pattern = Pattern.compile(regex);
@@ -64,6 +73,11 @@ class Persona {
         }
     }
 
+    /**
+     * Comprobar que la contrasña es válida
+     * @param contrasena
+     * @return un false si la contraseña no es valida y un true si es verdadera
+     */
     public boolean setContrasena(String contrasena) {
         if (contrasena.length() > 8) {
             this.contrasena = contrasena;
@@ -74,6 +88,7 @@ class Persona {
         }
     }
 
+    //sets solo con this
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -94,6 +109,11 @@ class Persona {
         this.telefono = telefono;
     }
 
+    /**
+     * Comprobar qye el usuario es mayor de edad
+     * @param edad
+     * @return  un false si la edad es menor de 18 y un true si es mayor de edad
+     */
     public boolean setEdad(int edad) {
         if (edad >= 18) {
             this.edad = edad;
@@ -106,7 +126,7 @@ class Persona {
 
     //metodo
     /**
-     * 
+     * Muestra toda la información del usuario al enseñar persona
      */
     @Override
     public String toString() {
